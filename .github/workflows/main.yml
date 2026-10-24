@@ -15,8 +15,7 @@ jobs:
         run: |
           rm -rf project
           mkdir -p project
-          unzip -q SmartStudents_V66_APK_READY.zip -d project
-
+          unzip -q SmartStudents_V67_FIXED.zip -d project
       - name: Configure AndroidX and Gradle memory
         run: |
           cat > project/gradle.properties <<'EOF'
