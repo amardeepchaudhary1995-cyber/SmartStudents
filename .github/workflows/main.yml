@@ -16,6 +16,14 @@ jobs:
           mkdir project
           unzip -q SmartStudents_V66_APK_READY.zip -d project
 
+      - name: Enable AndroidX
+        run: |
+          if grep -q '^android.useAndroidX=' project/gradle.properties; then
+            sed -i 's/^android.useAndroidX=.*/android.useAndroidX=true/' project/gradle.properties
+          else
+            echo 'android.useAndroidX=true' >> project/gradle.properties
+          fi
+
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
